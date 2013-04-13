@@ -2,12 +2,14 @@
 
 var myApp = angular.module("myApp", []);
 
-var firstCtrl = myApp.controller('FirstCtrl', ['$scope', function(scope) {
-    var todos = [
-        { text: "Learn Angular", done: 1365789942933 },
-        { text: "Speak about it" }
-    ];
+myApp.factory('Todos', function() {
+   return [
+       { text: "Learn Angular", done: 1365789942933 },
+       { text: "Speak about it" }
+   ];
+});
 
+var firstCtrl = myApp.controller('FirstCtrl', ['$scope', 'Todos', function(scope, todos) {
     scope.todos = todos;
 
     scope.markDone = function(todo, checked) {
