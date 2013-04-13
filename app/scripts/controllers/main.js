@@ -11,10 +11,17 @@ var firstCtrl = myApp.controller('FirstCtrl', ['$scope', function(scope) {
     scope.todos = todos;
 
     scope.markDone = function(todo, checked) {
-        if(checked) {
+        if (checked) {
             todo.done = new Date().getTime();
         } else {
             delete todo.done;
         }
+    }
+
+    scope.addTodo = function(newTodo) {
+        todos.push({
+            text: newTodo
+        });
+        scope.newTodoTxt = "";
     }
 }]);
