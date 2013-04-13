@@ -21,6 +21,10 @@
         form input.ng-valid.ng-dirty {
             border-color: #78FA89;
         }
+
+        .done {
+            text-decoration: line-through;
+        }
     </style>
 </head>
 <body ng-app="myApp">
@@ -33,7 +37,8 @@
             <div ng-controller="FirstCtrl">
                 <input type="text" ng-model="search.text">
                 <ul class="unstyled">
-                    <li ng-repeat="todo in todos | orderBy:'-done' | filter:search">
+                    <li ng-repeat="todo in todos | orderBy:'-done' | filter:search"
+                        ng-class="{ 'done': todo.done }">
                         <label class="checkbox">
                             <input type="checkbox"
                                    ng-checked="todo.done"
