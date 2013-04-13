@@ -31,8 +31,9 @@
                 <h1>Get $#!t done</h1>
             </div>
             <div ng-controller="FirstCtrl">
+                <input type="text" ng-model="search.text">
                 <ul class="unstyled">
-                    <li ng-repeat="todo in todos">
+                    <li ng-repeat="todo in todos | orderBy:'-done' | filter:search">
                         <label class="checkbox">
                             <input type="checkbox"
                                    ng-checked="todo.done"
