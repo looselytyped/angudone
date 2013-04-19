@@ -1,0 +1,35 @@
+<div ng-controller="FirstCtrl">
+    <input type="text" ng-model="search.text">
+    <ul class="unstyled">
+        <li ng-repeat="todo in todos | orderBy:'-done' | filter:search"
+            ng-class="{ 'done': todo.done }">
+            <label class="checkbox">
+                <input type="checkbox"
+                       ng-checked="todo.done"
+                       ng-model="checked"
+                       ng-click="markDone(todo, checked)">
+                {{ todo.text }}
+            </label>
+        </li>
+    </ul>
+    <form name="add" noinvalidate class="form-horizontal">
+        <div class="control-group">
+            <div>
+                <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-check"></i>
+                                </span>
+                    <input type="text"
+                           ng-model="newTodoTxt"
+                           placeholder="I want to .."
+                           required/>
+                </div>
+                <button class="btn btn-primary"
+                        ng-click="addTodo(newTodoTxt)"
+                        ng-disabled="add.$invalid">
+                    <i class="icon-plus-sign icon-white"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

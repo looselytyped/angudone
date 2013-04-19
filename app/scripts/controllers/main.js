@@ -2,11 +2,22 @@
 
 var myApp = angular.module("myApp", []);
 
+myApp.config(function($routeProvider) {
+    $routeProvider
+        .when('/todos', {
+            templateUrl: '/views/todos.html',
+            controller: 'FirstCtrl'
+        })
+        .otherwise({
+            redirectTo: '/todos'
+        });
+});
+
 myApp.factory('Todos', function() {
-   return [
-       { text: "Learn Angular", done: 1365789942933 },
-       { text: "Speak about it" }
-   ];
+    return [
+        { text: "Learn Angular", done: 1365789942933 },
+        { text: "Speak about it" }
+    ];
 });
 
 var firstCtrl = myApp.controller('FirstCtrl', ['$scope', 'Todos', function(scope, todos) {
