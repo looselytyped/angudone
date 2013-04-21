@@ -1,0 +1,9 @@
+# Angudone
+
+## Getting things done with Angular :) 
+
+- This is the source code for my talk at [NFJS](http://nofluffjuststuff.com) 'Web Apps with Angular'
+- The template is generated using [Yeoman](http://yeoman.io/) though you don't need Yeoman to run it. Simply clone (or even better, fork) it, and start playing with it 
+
+## NOTE
+- The code in this repository is bound to change, often radically. I would hate it if you made changes, did a pull, and landed in merge-hell :) Fork the project, and play with it and I won't have to feel guilty about clobbering all your changes.
